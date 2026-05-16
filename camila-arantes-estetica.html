@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camila Arantes - Estética Regenerativa | Batatais SP</title>
+    <meta name="description" content="Especialista em Estética Regenerativa. Enfermeira Esteta com expertise internacional em rejuvenescimento. Agende sua avaliação em Batatais - SP.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #D4A5A5;
+            --secondary: #C9A98F;
+            --accent: #B8947D;
+            --bg-light: #FAF8F6;
+            --bg-white: #FFFFFF;
+            --text-dark: #2D2D2D;
+            --text-light: #6B6B6B;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 165, 165, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            background: var(--bg-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(212, 165, 165, 0.3);
+            border: 3px solid var(--primary);
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .credentials {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(212, 165, 165, 0.4);
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 165, 165, 0.5);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            background: var(--bg-white);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.9;
+            margin-top: 30px;
+        }
+
+        /* Procedures Section */
+        .procedures {
+            padding: 80px 20px;
+            background: var(--bg-light);
+        }
+
+        .procedures-category {
+            margin-bottom: 60px;
+        }
+
+        .category-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .procedures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .procedure-card {
+            background: var(--bg-white);
+            padding: 35px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            border: 1px solid rgba(212, 165, 165, 0.1);
+        }
+
+        .procedure-card.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .procedure-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(212, 165, 165, 0.2);
+            border-color: var(--primary);
+        }
+
+        .procedure-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(212, 165, 165, 0.15) 0%, rgba(184, 148, 125, 0.15) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            border: 2px solid var(--primary);
+        }
+
+        .procedure-icon svg {
+            width: 35px;
+            height: 35px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .procedure-card h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .procedure-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        /* Expertise Badge */
+        .expertise-badge {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--accent) 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* Differentials Section */
+        .differentials {
+            padding: 80px 20px;
+            background: var(--bg-white);
+            text-align: center;
+        }
+
+        .differentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 50px auto 0;
+        }
+
+        .differential-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .differential-item.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .differential-icon svg {
+            width: 50px;
+            height: 50px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .differential-item h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .differential-item p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* CTA Final Section */
+        .cta-final {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-final h2 {
+            font-size: clamp(2.2rem, 4.5vw, 3rem);
+            margin-bottom: 20px;
+        }
+
+        .cta-final p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-button-light {
+            background: white;
+            color: var(--primary);
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 50px 20px 30px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .footer p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .footer-social {
+            margin: 25px 0;
+        }
+
+        .footer-social a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .procedures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .differentials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 60px 20px 40px;
+            }
+
+            .about, .procedures, .differentials {
+                padding: 60px 20px;
+            }
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="profile-image">
+                <!-- Substitua o URL abaixo pela foto da Camila -->
+                <img src="camila-foto.jpg" alt="Camila Arantes - Enfermeira Esteta">
+            </div>
+            <h1>Camila Arantes</h1>
+            <p class="subtitle">Especialista em Estética Regenerativa</p>
+            <p class="credentials">
+                Enfermeira Esteta | Estética Avançada | Pós-Graduanda em Dermatologia<br>
+                Expertise Internacional em Rejuvenescimento com Fios de Colágeno (KRCH)<br>
+                📍 Rua Fernando de Noronha, 634 - Vila Maria | Batatais – SP
+            </p>
+            <a href="https://wa.me/5516991021623" class="cta-button" target="_blank">Agende sua Avaliação</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">Sobre Camila</h2>
+                <p>
+                    Como enfermeira esteta e pós-graduanda em dermatologia, minha missão é cuidar da sua autoestima 
+                    com ciência, segurança e acolhimento. Cada protocolo é pensado de forma personalizada, 
+                    respeitando a individualidade de cada cliente e buscando sempre resultados naturais e harmoniosos. 
+                    Com expertise internacional em rejuvenescimento, trago o que há de mais moderno e eficaz 
+                    na estética regenerativa para você se sentir ainda mais confiante e radiante.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Procedures - Face -->
+    <section class="procedures">
+        <div class="container">
+            <div class="procedures-category">
+                <h2 class="category-title">Procedimentos Faciais</h2>
+                <div class="procedures-grid">
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 3v3M15 3v3"/>
+                                <rect x="8" y="6" width="8" height="4" rx="1"/>
+                                <path d="M10 10v8l-2 3M14 10v8l2 3"/>
+                                <circle cx="10" cy="15" r="0.5" fill="currentColor"/>
+                                <circle cx="14" cy="15" r="0.5" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Botox / Toxina Botulínica</h3>
+                        <p>Suavização de linhas de expressão e rugas, proporcionando aspecto mais jovem e descansado.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="9"/>
+                                <path d="M9 14c.5 1 1.5 2 3 2s2.5-1 3-2"/>
+                                <path d="M9.5 10.5c-.5 0-1-.5-1-1M15.5 10.5c.5 0 1-.5 1-1"/>
+                                <path d="M9 10.5L9.5 13M15 10.5L14.5 13"/>
+                            </svg>
+                        </div>
+                        <h3>Bigode Chinês</h3>
+                        <p>Preenchimento e harmonização do sulco nasolabial, devolvendo volume e suavidade ao rosto.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 12c0-2 2-3.5 4-3.5s3 .5 4 1.5c1-1 2-1.5 4-1.5s4 1.5 4 3.5c0 3-3 5-8 7-5-2-8-4-8-7z"/>
+                                <path d="M12 13v3M12 13c-1-.8-2.5-1-4-1M12 13c1-.8 2.5-1 4-1"/>
+                            </svg>
+                        </div>
+                        <h3>Botox nos Lábios</h3>
+                        <p>Eversão e definição labial com toxina botulínica, realçando a boca de forma natural.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3v8"/>
+                                <path d="M9 11c0 1.5 1 3 3 3s3-1.5 3-3"/>
+                                <path d="M12 14c-2 0-3.5 1.5-4 3.5-.3 1.2.5 2.5 1.5 2.5h5c1 0 1.8-1.3 1.5-2.5-.5-2-2-3.5-4-3.5z"/>
+                                <circle cx="10" cy="18" r="1"/>
+                                <circle cx="14" cy="18" r="1"/>
+                            </svg>
+                        </div>
+                        <h3>Rinomodelação</h3>
+                        <p>Remodelamento não cirúrgico do nariz com ácido hialurônico, corrigindo assimetrias e melhorando o contorno.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5c-3 3-5 6-5 9 0 2.8 2.2 5 5 5s5-2.2 5-5c0-3-2-6-5-9z"/>
+                                <path d="M12 11c1.7 0 3 1.3 3 3"/>
+                                <circle cx="9" cy="8" r="1" fill="currentColor"/>
+                                <circle cx="15" cy="10" r="0.8" fill="currentColor"/>
+                                <circle cx="11" cy="6" r="0.6" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Skinbooster</h3>
+                        <p>Hidratação profunda da pele com microinjeções de ácido hialurônico, restaurando luminosidade e viço.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/>
+                                <circle cx="8" cy="9" r="0.5" fill="currentColor"/>
+                                <circle cx="15" cy="16" r="0.5" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Jato de Plasma</h3>
+                        <p>Tratamento inovador que utiliza energia de plasma para rejuvenescer, tensionar e renovar a pele sem cirurgia.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 8c0-2 1.5-4 4-4h8c2.5 0 4 2 4 4v8c0 2-1.5 4-4 4H8c-2.5 0-4-2-4-4V8z"/>
+                                <path d="M7 11h10M7 14h10M7 17h6"/>
+                                <circle cx="12" cy="8" r="2"/>
+                                <path d="M15 8l3-3M9 8L6 5"/>
+                            </svg>
+                        </div>
+                        <h3>Peeling</h3>
+                        <p>Renovação celular da pele por meio de ácidos, com resultados para manchas, textura irregular e envelhecimento.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="5"/>
+                                <path d="M12 2v2M12 20v2M20 12h2M2 12h2"/>
+                                <path d="M17.5 6.5l1.4-1.4M5.1 18.9l1.4-1.4M6.5 6.5L5.1 5.1M18.9 18.9l-1.4-1.4"/>
+                                <circle cx="10" cy="11" r="1.5" opacity="0.3" fill="currentColor"/>
+                                <circle cx="14" cy="13" r="1" opacity="0.3" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Acroma (Manchas)</h3>
+                        <p>Tratamento focado na despigmentação e uniformização do tom de pele, combatendo manchas e melasma.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="8"/>
+                                <circle cx="10" cy="10" r="1.5" opacity="0.5" fill="currentColor"/>
+                                <circle cx="15" cy="11" r="1.2" opacity="0.5" fill="currentColor"/>
+                                <circle cx="12" cy="15" r="1" opacity="0.5" fill="currentColor"/>
+                                <circle cx="8" cy="14" r="0.8" opacity="0.3" fill="currentColor"/>
+                                <circle cx="16" cy="14" r="0.8" opacity="0.3" fill="currentColor"/>
+                                <path d="M8 9.5c.5-.5 1.5-1 2.5-1M14 9c.8 0 1.5.3 2 .8"/>
+                            </svg>
+                        </div>
+                        <h3>Limpeza de Pele</h3>
+                        <p>Procedimento de higienização profunda dos poros, controle de oleosidade e preparação da pele para tratamentos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Procedures - Body -->
+            <div class="procedures-category">
+                <h2 class="category-title">Procedimentos Corporais</h2>
+                <div class="procedures-grid">
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="8"/>
+                                <circle cx="12" cy="12" r="5"/>
+                                <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                                <path d="M12 4v3M12 17v3M4 12h3M17 12h3"/>
+                            </svg>
+                        </div>
+                        <h3>Gordura Localizada</h3>
+                        <p>Tratamento não invasivo para redução de gordura localizada em regiões específicas do corpo.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 8c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/>
+                                <path d="M3 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/>
+                                <path d="M3 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/>
+                                <path d="M7 6v12M17 6v12"/>
+                            </svg>
+                        </div>
+                        <h3>Celulite</h3>
+                        <p>Protocolo especializado para melhora da aparência da pele com celulite, estimulando colágeno e circulação.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 8c0-3 2-6 6-6s6 3 6 6"/>
+                                <path d="M6 8c0 4 1.5 8 6 10 4.5-2 6-6 6-10"/>
+                                <ellipse cx="12" cy="17" rx="4" ry="2"/>
+                                <path d="M9 10h6M10 13h4"/>
+                            </svg>
+                        </div>
+                        <h3>Papada</h3>
+                        <p>Tratamento para redução e definição da região submandibular, melhorando o contorno do rosto e pescoço.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 6c-2 0-3 2-3 4v4c0 3 2 6 5 6h4c3 0 5-3 5-6v-4c0-2-1-4-3-4"/>
+                                <path d="M8 6c0-2 1.5-4 4-4s4 2 4 4"/>
+                                <path d="M10 14c.5 2 1 3 2 3s1.5-1 2-3"/>
+                            </svg>
+                        </div>
+                        <h3>Glúteos</h3>
+                        <p>Bioestimulação e modelagem não cirúrgica para dar firmeza, volume e forma à região glútea.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 8c0-2 2-4 4-4h8c2 0 4 2 4 4v8c0 2-2 4-4 4H8c-2 0-4-2-4-4V8z"/>
+                                <path d="M8 10l8 8M16 10l-8 8"/>
+                                <path d="M12 4v4M12 16v4M4 12h4M16 12h4"/>
+                            </svg>
+                        </div>
+                        <h3>Flacidez</h3>
+                        <p>Protocolos de bioestimulação de colágeno para pele mais firme e tonificada em face e corpo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Procedures - Advanced -->
+            <div class="procedures-category">
+                <h2 class="category-title">Especialidades Avançadas</h2>
+                <div class="procedures-grid">
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3l-2 5-5 2 5 2 2 5 2-5 5-2-5-2-2-5z"/>
+                                <circle cx="12" cy="10" r="1" fill="currentColor"/>
+                                <path d="M6 6l3 3M18 6l-3 3M6 18l3-3M18 18l-3-3"/>
+                                <path d="M9 12c0 1.5.5 3 3 3s3-1.5 3-3"/>
+                            </svg>
+                        </div>
+                        <h3>Fios de Colágeno</h3>
+                        <p>Lifting não cirúrgico com fios bioestimuladores que reposicionam e rejuvenescem os tecidos, estimulando produção natural de colágeno.</p>
+                        <span class="expertise-badge">⭐ Expertise Internacional KRCH</span>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3c-3 3-5 6-5 9 0 2.8 2.2 5 5 5s5-2.2 5-5c0-3-2-6-5-9z"/>
+                                <path d="M12 8v8M9 11h6M9 14h6"/>
+                                <circle cx="12" cy="12" r="2"/>
+                            </svg>
+                        </div>
+                        <h3>PRP (Plasma Rico em Plaquetas)</h3>
+                        <p>Uso do próprio sangue do paciente para regenerar e rejuvenescer a pele, cabelo e tecidos.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="8"/>
+                                <circle cx="8" cy="8" r="1" fill="currentColor"/>
+                                <circle cx="12" cy="7" r="1" fill="currentColor"/>
+                                <circle cx="16" cy="8" r="1" fill="currentColor"/>
+                                <circle cx="8" cy="12" r="1" fill="currentColor"/>
+                                <circle cx="16" cy="12" r="1" fill="currentColor"/>
+                                <circle cx="8" cy="16" r="1" fill="currentColor"/>
+                                <circle cx="12" cy="17" r="1" fill="currentColor"/>
+                                <circle cx="16" cy="16" r="1" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>PEIM</h3>
+                        <p>Protocolo de Estimulação Intradérmica Multiponto para rejuvenescimento avançado e tratamento profundo da pele.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="9"/>
+                                <path d="M12 5v4M12 15v4M5 12h4M15 12h4"/>
+                                <path d="M8.5 8.5l2 2M13.5 13.5l2 2M8.5 15.5l2-2M13.5 8.5l2 2"/>
+                                <circle cx="12" cy="12" r="2"/>
+                            </svg>
+                        </div>
+                        <h3>Microagulhamento</h3>
+                        <p>Indução percutânea de colágeno para melhorar textura, poros, manchas e flacidez.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2l-1 6-3 3 3 3 1 6 1-6 3-3-3-3-1-6z"/>
+                                <circle cx="12" cy="11" r="2"/>
+                                <path d="M4 11h4M16 11h4"/>
+                                <path d="M7 6l2 2M15 6l-2 2M7 16l2-2M15 16l-2-2"/>
+                            </svg>
+                        </div>
+                        <h3>Lavieen (Laser)</h3>
+                        <p>Tratamento a laser para renovação da pele, manchas e rejuvenescimento com tecnologia avançada.</p>
+                    </div>
+
+                    <div class="procedure-card">
+                        <div class="procedure-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2c-3 0-5 2-5 5v8c0 2 1.5 4 3 5"/>
+                                <path d="M12 2c3 0 5 2 5 5v8c0 2-1.5 4-3 5"/>
+                                <path d="M9 4c0 1.5 1 3 3 3s3-1.5 3-3"/>
+                                <circle cx="10" cy="20" r="1.5" fill="currentColor"/>
+                                <circle cx="14" cy="20" r="1.5" fill="currentColor"/>
+                                <path d="M10 15l2 5M14 15l-2 5"/>
+                            </svg>
+                        </div>
+                        <h3>Tratamento Capilar</h3>
+                        <p>Procedimentos para saúde e revitalização dos fios e do couro cabeludo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentials Section -->
+    <section class="differentials">
+        <div class="container">
+            <h2 class="section-title">Diferenciais</h2>
+            <div class="differentials-grid">
+                <div class="differential-item">
+                    <div class="differential-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L8 6h8l-4-4z"/>
+                            <path d="M9 6v4c0 1.7 1.3 3 3 3s3-1.3 3-3V6"/>
+                            <path d="M12 13v9M9 16h6M9 19h6"/>
+                            <circle cx="12" cy="9" r="1" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Enfermeira Esteta</h3>
+                    <p>Registro profissional e atuação respaldada por formação em enfermagem</p>
+                </div>
+
+                <div class="differential-item">
+                    <div class="differential-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 10l9-7 9 7v11H3V10z"/>
+                            <path d="M9 21v-6h6v6"/>
+                            <rect x="6" y="13" width="3" height="3"/>
+                            <rect x="15" y="13" width="3" height="3"/>
+                            <path d="M12 3l-8 7M12 3l8 7"/>
+                        </svg>
+                    </div>
+                    <h3>Pós-Graduanda em Dermatologia</h3>
+                    <p>Conhecimento científico aprofundado para melhores resultados</p>
+                </div>
+
+                <div class="differential-item">
+                    <div class="differential-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20"/>
+                            <path d="M12 2c-2.5 2.5-4 6-4 10s1.5 7.5 4 10c2.5-2.5 4-6 4-10s-1.5-7.5-4-10z"/>
+                            <path d="M6 6c2 2 4 3 6 3s4-1 6-3M6 18c2-2 4-3 6-3s4 1 6 3"/>
+                        </svg>
+                    </div>
+                    <h3>Expertise Internacional KRCH</h3>
+                    <p>Formação exclusiva em rejuvenescimento com fios de colágeno</p>
+                </div>
+
+                <div class="differential-item">
+                    <div class="differential-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 21c-4-3-8-6-8-10 0-3 2-5 5-5 1.5 0 2.5.5 3 1.5.5-1 1.5-1.5 3-1.5 3 0 5 2 5 5 0 4-4 7-8 10z"/>
+                            <path d="M12 12v4M10 14h4"/>
+                        </svg>
+                    </div>
+                    <h3>Atendimento Humanizado</h3>
+                    <p>Cuidado personalizado e acolhimento em cada etapa</p>
+                </div>
+
+                <div class="differential-item">
+                    <div class="differential-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2l-8 4v6c0 5 3 9 8 10 5-1 8-5 8-10V6l-8-4z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3>Protocolos Seguros</h3>
+                    <p>Procedimentos respaldados por ciência e boas práticas</p>
+                </div>
+
+                <div class="differential-item">
+                    <div class="differential-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2c-3 3-4 6-4 8 0 2.2 1.8 4 4 4s4-1.8 4-4c0-2-1-5-4-8z"/>
+                            <path d="M12 14v8"/>
+                            <path d="M8 18c1-1 2-2 4-2s3 1 4 2"/>
+                            <path d="M7 15c-1 1-2 2-2 3 0 1.1.9 2 2 2M17 15c1 1 2 2 2 3 0 1.1-.9 2-2 2"/>
+                        </svg>
+                    </div>
+                    <h3>Resultados Naturais</h3>
+                    <p>Harmonização respeitando sua beleza única e individualidade</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Pronta para se cuidar?</h2>
+            <p>Agende sua avaliação e descubra o protocolo ideal para você</p>
+            <a href="https://wa.me/5516991021623" class="cta-button-light" target="_blank">Falar com a Camila no WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h3>Camila Arantes</h3>
+            <p>Estética Regenerativa</p>
+            <div class="footer-social">
+                <p>📍 Rua Fernando de Noronha, 634 - Vila Maria | Batatais – SP</p>
+                <p>Instagram: <a href="https://instagram.com/camila.arantes_estetica" target="_blank">@camila.arantes_estetica</a></p>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Camila Arantes - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5516991021623" class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- JavaScript for Scroll Animations -->
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all procedure cards
+        document.querySelectorAll('.procedure-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Observe differential items
+        document.querySelectorAll('.differential-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Smooth scroll for links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
